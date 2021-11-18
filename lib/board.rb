@@ -21,25 +21,24 @@ class Board
   end
 
   def make_move(start_pos, current_player_name)
-    pos = (1..6).include?(start_pos) ? (start_pos - 1) : start_pos
-    stones = cups[pos].count
-    cups[pos] = []
+    stones = cups[start_pos].count
+    cups[start_pos] = []
 
     stones.times do |i|
-      pos = (pos + 1) % 14
-      if ![6,13].include?(pos) || 
-        (current_player_name == name1 && pos == 6) ||
-        (current_player_name == name2 && pos == 13)
+      start_pos = (start_pos + 1) % 14
+      if ![6,13].include?(start_pos) || 
+        (current_player_name == name1 && start_pos == 6) ||
+        (current_player_name == name2 && start_pos == 13)
         
-        cups[pos] << :stone
+        cups[start_pos] << :stone
       else
-        pos = (pos + 1) % 14
-        cups[pos] << :stone
+        start_pos = (start_pos + 1) % 14
+        cups[start_pos] << :stone
       end
     end
 
     render
-    next_turn(pos)
+    next_turn(start_pos)
   end
 
   def next_turn(ending_cup_idx)
@@ -50,6 +49,7 @@ class Board
   end
 
   def render
+    system("clear")
     print "      #{@cups[7..12].reverse.map { |cup| cup.count }}      \n"
     puts "#{@cups[13].count} -------------------------- #{@cups[6].count}"
     print "      #{@cups.take(6).map { |cup| cup.count }}      \n"
