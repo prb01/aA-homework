@@ -64,5 +64,6 @@ class Mancala
 end
 
 if __FILE__ == $PROGRAM_NAME
-  Mancala.new("PRB","Caro").play
+  # Mancala.new("PRB","Caro").play
+  Mancala.new("Caro","PRB").play
 end
