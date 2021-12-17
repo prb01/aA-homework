@@ -31,6 +31,20 @@ class Play
     data.map { |datum| Play.new(datum) }
   end
 
+  def self.find_by_playwright(name)
+    data = PlayDBConnection.instance.execute(<<-SQL, name)
+    SELECT
+      p.*
+    FROM
+      plays p
+    JOIN
+      playwrights pw ON (p.playwright_id = pw.id)
+    WHERE
+      name = ?
+    SQL
+    data.map { |datum| Play.new(datum) }
+  end
+
   def initialize(options)
     @id = options['id']
     @title = options['title']
