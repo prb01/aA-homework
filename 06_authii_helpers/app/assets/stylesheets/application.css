@@ -23,7 +23,7 @@
    text-decoration: inherit;
    color: inherit;
    background: transparent;
-   font-family: 'Amatic SC', cursive;
+   font-family: 'Open Sans';
    font-size: 30px;
  }
 
@@ -36,16 +36,17 @@ nav {
   align-items: center;
   box-sizing: border-box;
   padding: 0 20px;
-  color: yellow;
+  color: rgb(255, 255, 255);
 }
 
 h1 {
-  font-size: 60px;
-  color: yellow;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
 }
 
 a {
-  color: yellow;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 
@@ -60,15 +61,14 @@ table {
 
 th {
   background-color: #000066;
-  color: yellow;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
 }
 
 textarea, select, input {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Open Sans';
   background-color: inherit;
   border: 0px;
-  border-bottom: 5px solid yellow;
   font-size: 30px;
   margin: 5px 10px;
 }
@@ -102,7 +102,7 @@ nav form {
 }
 
 nav input {
-  color: yellow;
+  color: rgb(255, 255, 255);
 }
 
 .main-nav {
