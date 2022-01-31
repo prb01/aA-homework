@@ -51,7 +51,6 @@ RSpec.describe User, type: :model do
         expect(User.find_by_credentials(email: u.email, password: "blabla"))
           .to be_nil
       end
-    
     end
 
   end
