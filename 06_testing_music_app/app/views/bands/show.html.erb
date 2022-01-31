@@ -1,0 +1,11 @@
+<%= render 'links', new: false %>
+
+<div>
+  <h2><%= @band.name %></h2>
+</div>
+
+<ul>
+  <% @band.albums.order(:year).each do |album| %>
+    <li class="music-links"><%= link_to "#{album.title} (#{album.year})", album_url(album) %></li>
+  <% end %>
+</ul>

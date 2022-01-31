@@ -1,0 +1,18 @@
+<%= render 'links', new: false %>
+
+<div>
+  <h2><%= @album.band.name %></h2>
+</div>
+
+<h3>
+  <%= "#{@album.title} (#{@album.year})" %>
+  <%= " live" if !@album.studio %>
+</h3>
+
+<ul>
+  <% @album.tracks.order(:ord).each do |track| %>
+    <li class="music-links">
+    <%= link_to "#{track.ord}. #{"BONUS:" if track.bonus} #{track.title}",
+     track_url(track) %></li>
+  <% end %>
+</ul>

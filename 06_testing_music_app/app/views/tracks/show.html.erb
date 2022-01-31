@@ -1,0 +1,26 @@
+<%= render 'links', new: false %>
+
+<div>
+  <h2><%= @track.band.name %></h2>
+</div>
+
+<h3>
+  <%= "#{@track.album.title} (#{@track.album.year})" %>
+  <%= " live" if !@track.album.studio %>
+</h3>
+
+<br>
+<h4>
+  <%= "#{@track.ord}. #{"BONUS:" if @track.bonus} #{@track.title}" %>
+</h4>
+
+<br>
+<p>
+  <%= ugly_lyrics(@track.lyrics) %>
+</p>
+
+<br>
+<%= render 'notes/form', track: @track %>
+
+<br>
+<%= render 'notes/note', track: @track %>
