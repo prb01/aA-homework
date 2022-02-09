@@ -31,5 +31,5 @@ feature "the signup process" do
       expect(page).to have_content('Sign up')
     end
   end
-
+  
 end
